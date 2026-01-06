@@ -52,6 +52,27 @@ server.get("/drivers", async ( request, response ) => {
     }
 });
 
+interface RouteParams {
+    id: string;
+}
+
+server.get<{Params: RouteParams}>("/drivers/:id", async ( request, response) => {
+    const id = Number(request.params.id);
+    const driver = drivers.find( driver => driver.id === id);
+
+    if (!driver) {
+        response.type("application/json").code(404);
+        return {
+            message: "Driver not found"
+        }
+    }
+
+    response.type("application/json").code(200);
+    return {
+        driver
+    }
+});
+
 server.listen({ port: 3333 }, () => {
     console.log("server init");
 });
