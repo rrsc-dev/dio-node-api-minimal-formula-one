@@ -3,39 +3,49 @@ import fastify from "fastify";
 const server = fastify({ logger: true });
 
 const teams = [
-    {
-        id: 1,
-        name: "Time 1",
-        base: "País A"
-    },
-    {
-        id: 2,
-        name: "Time 2",
-        base: "País B"
-    },
-    {
-        id: 3,
-        name: "Time 3",
-        base: "País C"
-    }
+    { id: 1, name: "Oracle Red Bull Racing", base: "United Kingdom" },
+    { id: 2, name: "Mercedes-AMG PETRONAS", base: "United Kingdom" },
+    { id: 3, name: "Scuderia Ferrari", base: "Italy" },
+    { id: 4, name: "McLaren Formula 1 Team", base: "United Kingdom" },
+    { id: 5, name: "Aston Martin Aramco", base: "United Kingdom" },
+    { id: 6, name: "BWT Alpine F1 Team", base: "France" },
+    { id: 7, name: "Williams Racing", base: "United Kingdom" },
+    { id: 8, name: "Visa Cash App RB", base: "Italy" },
+    { id: 9, name: "Stake F1 Team Kick Sauber", base: "Switzerland" },
+    { id: 10, name: "MoneyGram Haas F1 Team", base: "United States" },
+    { id: 11, name: "Lotus F1 Team", base: "United Kingdom" },
+    { id: 12, name: "Renault DP World", base: "France" },
+    { id: 13, name: "Racing Point", base: "United Kingdom" },
+    { id: 14, name: "Force India", base: "United Kingdom" },
+    { id: 15, name: "AlphaTauri", base: "Italy" },
+    { id: 16, name: "Alfa Romeo Racing", base: "Switzerland" },
+    { id: 17, name: "Toro Rosso", base: "Italy" },
+    { id: 18, name: "Benetton Formula", base: "United Kingdom" },
+    { id: 19, name: "Jordan Grand Prix", base: "United Kingdom" },
+    { id: 20, name: "Tyrrell Racing", base: "United Kingdom" }
 ];
 
 const drivers = [
-    {
-        id: 1,
-        name: "Um piloto 1",
-        team: "Time 1"
-    },
-    {
-        id: 2,
-        name: "Um piloto 2",
-        team: "Time 2"
-    },
-    {
-        id: 3,
-        name: "Um piloto 3",
-        team: "Time 3"
-    }
+    { id: 1, name: "Max Verstappen", team: "Oracle Red Bull Racing" },
+    { id: 2, name: "Sergio Perez", team: "Oracle Red Bull Racing" },
+    { id: 3, name: "Lewis Hamilton", team: "Mercedes-AMG PETRONAS" },
+    { id: 4, name: "George Russell", team: "Mercedes-AMG PETRONAS" },
+    { id: 5, name: "Charles Leclerc", team: "Scuderia Ferrari" },
+    { id: 6, name: "Carlos Sainz", team: "Scuderia Ferrari" },
+    { id: 7, name: "Lando Norris", team: "McLaren Formula 1 Team" },
+    { id: 8, name: "Oscar Piastri", team: "McLaren Formula 1 Team" },
+    { id: 9, name: "Fernando Alonso", team: "Aston Martin Aramco" },
+    { id: 10, name: "Lance Stroll", team: "Aston Martin Aramco" },
+    { id: 11, name: "Pierre Gasly", team: "BWT Alpine F1 Team" },
+    { id: 12, name: "Esteban Ocon", team: "BWT Alpine F1 Team" },
+    { id: 13, name: "Alexander Albon", team: "Williams Racing" },
+    { id: 14, name: "Logan Sargeant", team: "Williams Racing" },
+    { id: 15, name: "Daniel Ricciardo", team: "Visa Cash App RB" },
+    { id: 16, name: "Yuki Tsunoda", team: "Visa Cash App RB" },
+    { id: 17, name: "Valtteri Bottas", team: "Stake F1 Team Kick Sauber" },
+    { id: 18, name: "Zhou Guanyu", team: "Stake F1 Team Kick Sauber" },
+    { id: 19, name: "Nico Hulkenberg", team: "MoneyGram Haas F1 Team" },
+    { id: 20, name: "Kevin Magnussen", team: "MoneyGram Haas F1 Team" }
 ];
 
 server.get("/teams", async ( request, response ) => {
