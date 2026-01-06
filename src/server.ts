@@ -1,6 +1,12 @@
 import fastify from "fastify";
+import cors from "@fastify/cors";
 
 const server = fastify({ logger: true });
+
+server.register(cors, {
+    origin: 'localhost:3333',
+    methods: ["GET"]
+})
 
 const teams = [
     { id: 1, name: "Oracle Red Bull Racing", base: "United Kingdom" },
